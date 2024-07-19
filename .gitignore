@@ -1,0 +1,12 @@
+/env
+/account/migrations
+/account/__pycache__
+/category/migrations
+/category/__pycache__
+/note/migrations
+/note/__pycache__
+/tags/migrations
+/tags/__pycache__
+/.idea
+/storage
+/db.sqlite3

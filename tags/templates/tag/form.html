@@ -1,0 +1,21 @@
+{% extends 'dashboard/layout.html' %}
+
+{% block tag_active %}
+    active
+{% endblock %}
+
+{% block title %}
+    {{ job }} Tag
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center heading-text m-5">{{ job }} Tag</h2>
+    <div class="d-flex justify-content-center">
+        <form method="POST" class="col-md-3">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock %}
+

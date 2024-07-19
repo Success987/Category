@@ -1,0 +1,33 @@
+{% extends 'dashboard/layout.html' %}
+
+{% block category_active %}
+    active
+{% endblock %}
+
+{% block content %}
+    <div class="container p-2">
+        <h1 class="text-center m-5">Subcategory List</h1>
+        <a href="{% url 'category:subcategory_create' %}" class="btn btn-success mb-2">Add Subcategory</a>
+        <div class="row">
+            {% for category in subcategories %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ category.name }}</h4>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="card-body pt-0">
+                            <a href="{% url 'category:update' category.slug %}" class="btn btn-warning">Edit</a>
+                            <a href="{% url 'category:remove' category.slug %}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <p>Please add a Subcategory.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
